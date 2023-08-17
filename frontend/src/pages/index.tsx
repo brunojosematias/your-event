@@ -9,7 +9,10 @@ import { ArrowUp, EnvelopeSimple, WhatsappLogo } from "phosphor-react";
 
 export function Home() {
   return (
-    <div className="bg-slate-100 text-center overflow-hidden">
+    <div
+      id="start"
+      className="bg-slate-100 text-center overflow-hidden scroll-smooth"
+    >
       <div className="fixed top-0 left-0 w-full z-50">
         <Navbar />
       </div>
@@ -17,7 +20,7 @@ export function Home() {
         <Carousel />
       </header>
 
-      <section id="about" className="pt-20 px-6">
+      <section id="about" className="pt-24 px-6">
         <header>
           <h4 className="text-indigo-900 font-bold tracking-[8px]">sobre</h4>
           <h2 className="text-2xl font-bold">Divulgue seu evento</h2>
@@ -34,8 +37,8 @@ export function Home() {
         </div>
       </section>
 
-      <section id="events" className="bg-indigo-400 px-6 mt-14 pb-9">
-        <header className="pt-9">
+      <section id="events" className="bg-indigo-400 px-6 mt-20 pb-9">
+        <header className="pt-24">
           <h4 className="text-indigo-900 font-bold tracking-[8px]">Eventos</h4>
           <h2 className="text-2xl font-bold">Eventos abertos</h2>
         </header>
@@ -167,9 +170,9 @@ export function Home() {
         </div>
 
         <div className="text-right mt-16">
-          <button type="button" className="bg-indigo-400 p-3">
+          <a type="button" href="#start" className="bg-indigo-400 p-3">
             <ArrowUp size={32} color="#fff" />
-          </button>
+          </a>
         </div>
       </footer>
     </div>

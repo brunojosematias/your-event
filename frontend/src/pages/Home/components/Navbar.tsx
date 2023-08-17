@@ -25,19 +25,19 @@ export function Navbar() {
     {
       id: 1,
       name: "Início",
-      href: "#",
+      href: "#start",
     },
 
     {
       id: 2,
       name: "Sobre",
-      href: "#",
+      href: "#about",
     },
 
     {
       id: 3,
       name: "Eventos",
-      href: "#",
+      href: "#events",
     },
   ];
 
@@ -100,6 +100,7 @@ export function Navbar() {
             {navigation.map((item) => (
               <li
                 key={item.id}
+                onClick={handleToggleMenu}
                 className="after:content-[''] after:block after:w-0 after:h-1 after:bg-indigo-900 hover:after:w-full  after:transition-all transition duration-200"
               >
                 <a href={item.href}>{item.name}</a>
