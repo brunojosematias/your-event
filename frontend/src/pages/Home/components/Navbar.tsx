@@ -45,7 +45,7 @@ export function Navbar() {
     <nav
       className={
         scroll > 0
-          ? "bg-indigo-600 relative flex px-6 py-7 transition-colors duration-200"
+          ? "bg-indigo-600 relative flex px-6 py-7 transition-colors duration-200 shadow-xl"
           : "bg-slate-100 relative flex px-6 py-7 transition-colors duration-200"
       }
     >
@@ -53,7 +53,13 @@ export function Navbar() {
         <a href="#">
           <h2 className="font-bold text-2xl">
             your
-            <span className={scroll > 0 ? "text-white" : "text-indigo-600"}>
+            <span
+              className={
+                scroll > 0
+                  ? "text-white transition-colors duration-200"
+                  : "text-indigo-600 transition-colors duration-200"
+              }
+            >
               Event
             </span>
           </h2>
@@ -62,7 +68,11 @@ export function Navbar() {
         <button
           type="button"
           onClick={handleToggleMenu}
-          className={scroll > 0 ? "text-white" : ""}
+          className={
+            scroll > 0
+              ? "text-white transition-colors duration-200"
+              : "transition-colors duration-200"
+          }
         >
           <List size={32} />
         </button>
