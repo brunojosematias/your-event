@@ -1,3 +1,5 @@
+import * as Dialog from "@radix-ui/react-dialog";
+
 import { Carousel } from "./Home/components/Carousel";
 import { Navbar } from "./Home/components/Navbar";
 
@@ -6,17 +8,23 @@ import person from "../assets/person.png";
 
 import personWithAGuitar from ".././assets/person-holding-a-guitar-on-stage.png";
 import { ArrowUp, EnvelopeSimple, WhatsappLogo } from "phosphor-react";
+import { Register } from "./Home/components/Register";
 
 export function Home() {
   return (
     <div
       id="start"
-      className="bg-slate-100 text-center overflow-hidden scroll-smooth"
+      className="bg-slate-100 text-center overflow-hidden scroll-smooth "
     >
-      <div className="fixed top-0 left-0 w-full z-50">
-        <Navbar />
-      </div>
-      <header className="pt-20">
+      <Dialog.Root>
+        <div className="fixed top-0 left-0 w-full z-10">
+          <Navbar />
+        </div>
+
+        <Register />
+      </Dialog.Root>
+
+      <header className="pt-20 overflow-hidden">
         <Carousel />
       </header>
 

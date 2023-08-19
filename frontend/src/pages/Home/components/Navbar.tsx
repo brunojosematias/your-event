@@ -1,6 +1,9 @@
+import * as Dialog from "@radix-ui/react-dialog";
+
 import { EnvelopeSimple, List, User, WhatsappLogo, X } from "phosphor-react";
 
 import { useState } from "react";
+import { Button } from "../../../components/Button";
 
 interface INavigation {
   id: number;
@@ -81,7 +84,7 @@ export function Navbar() {
       <div
         className={
           toggle
-            ? "bg-indigo-600 px-6 py-7 z-50 overflow-hidden absolute top-0 left-0 w-full h-screen text-center flex flex-col gap-24 translate-y-0 transition-transform"
+            ? "bg-indigo-600 px-6 py-7 overflow-hidden absolute top-0 left-0 w-full h-screen text-center flex flex-col gap-24 translate-y-0 transition-transform"
             : "bg-indigo-600 px-6 py-7 absolute top-0 left-0 w-full h-screen text-center flex flex-col gap-24 -translate-y-full invisible"
         }
       >
@@ -113,12 +116,12 @@ export function Navbar() {
               <User size={24} />
               Login
             </button>
-            <button
-              type="button"
-              className="bg-indigo-900 px-[0.8125rem] py-[0.875rem] rounded-lg hover:brightness-125 transition ease-in duration-150 active:brightness-75"
-            >
-              Cadastre-se
-            </button>
+
+            <Dialog.Trigger asChild>
+              <Button type="button" onClick={handleToggleMenu}>
+                Cadastre-se
+              </Button>
+            </Dialog.Trigger>
           </div>
 
           <div className="text-white mt-20 flex flex-col gap-5">
